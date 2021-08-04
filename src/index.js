@@ -19,4 +19,9 @@ async function getWeather(lon, lat) {
     document.querySelector('#country').append(weather.sys.country);
     document.querySelector('#temp').append(`${currentUnitCelsius} °`);
     document.querySelector('#tempUnit').append(tempUnit);
+    document.querySelector('#description').append(weather.weather[0].description)
+
+    const img = document.querySelector('#imgDesc')
+    img.setAttribute('src', `${weather.weather[0].icon}`)
 };
+
