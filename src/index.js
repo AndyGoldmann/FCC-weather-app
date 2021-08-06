@@ -20,7 +20,6 @@ async function getWeather(lon, lat) {
         const weather = await data.json()
         const currentUnitCelsius = Math.round(weather.main.temp);
         const tempUnit = 'C'
-        console.log(weather)
         
         document.querySelector('#city').append(weather.name);
         document.querySelector('#country').append(weather.sys.country);
@@ -35,3 +34,19 @@ async function getWeather(lon, lat) {
         console.log(error)
     }
 };
+
+const changeTempUnit = () => {
+    const currentUnit = document.querySelector('#tempUnit')
+    const newUnit = currentUnit.textContent === 'C'? 'F' : 'C'
+    const temp = document.querySelector('#temp');
+
+    currentUnit.textContent = newUnit;
+
+    if (newUnit === 'F') {
+        temp.textContent = `${(Math.round(parseInt(temp.textContent) * 9/5) + 32)} °`
+    } else {
+        temp.textContent = `${Math.round((parseInt(temp.textContent) - 32) * 5/9)} °`
+    }
+}
+
+document.querySelector('#tempUnit').addEventListener('click', changeTempUnit)
