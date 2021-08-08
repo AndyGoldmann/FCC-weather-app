@@ -1,8 +1,23 @@
 body {
+    display: flex;
+    justify-content: center;
     background-color: black;
     color: blanchedalmond;
 }
 
+#app {
+    font-family: "Lato";
+}
+
+.bigger-text {
+    text-size-adjust: unset;
+}
+
+.aling-center {
+    align-content: center;
+}
+
 #tempUnit {
+    font-weight: bold;
     color: gold;
 }
