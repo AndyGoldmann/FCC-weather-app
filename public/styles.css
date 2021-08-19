@@ -6,11 +6,11 @@ body {
 }
 
 #app {
-    font-family: "Lato";
+    font-family: 'Roboto', sans-serif;
 }
 
 .bigger-text {
-    text-size-adjust: unset;
+    font-size: 25px;
 }
 
 .aling-center {
